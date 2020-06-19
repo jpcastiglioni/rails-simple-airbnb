@@ -1,0 +1,18 @@
+<!-- index.html.erb -->
+<h1 class="mt-5">All our Flats (<%= @flats.count %>)</h1>
+
+<div class="flats-container">
+  <% @flats.each do |flat| %>
+
+    <div class="card" style="width: 18rem;">
+      <img src= "<%= Faker::Placeholdit.image(size: '50x50', format: 'jpg') %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> <%= flat.name %> </h5>
+        <p class="card-text"><%= flat.address %>.</p>
+        <p> <span> <%= flat.number_of_guests %> </span> <span> <%= flat.price_per_night %> </span> </p>
+        <a href="#" class="btn btn-primary">More info</a>
+      </div>
+    </div>
+
+  <% end %>
+</div>
